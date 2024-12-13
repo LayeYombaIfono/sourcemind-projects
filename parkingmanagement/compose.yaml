@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: . # Indique que le Dockerfile se trouve dans le répertoire actuel
+    container_name: parking-management-app
+    ports:
+      - "8080:8080" # Expose l'application sur le port 8080
+    depends_on:
+      - db # Démarre la base de données avant l'application
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/parking_db
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    volumes:
+      - ./logs:/app/logs # Sauvegarde des logs dans un dossier local
+
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    ports:
+      - "5432:5432" # Expose la base de données sur le port 5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: parking_management_db
+    volumes:
+      - db-data:/var/lib/postgresql/data # Persist les données dans un volume
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    ports:
+      - "5050:80" # Expose pgAdmin sur le port 5050
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com # Email pour se connecter à pgAdmin
+      PGADMIN_DEFAULT_PASSWORD: admin # Mot de passe pour pgAdmin
+    depends_on:
+      - db # Assure que PostgreSQL est démarré avant pgAdmin
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin # Persist les données de configuration de pgAdmin
+
+volumes:
+  db-data: # Volume pour les données de PostgreSQL
+  pgadmin-data: # Volume pour les données de configuration de pgAdmin
