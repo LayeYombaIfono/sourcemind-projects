@@ -14,13 +14,16 @@ class GestionparkautomobileApplicationTests {
 
 
 
-//    @Test
-//	void contextLoads() {
-//	}
+   @Test
+	void contextLoads() {
+	}
 
 	@Autowired
 	private  UserRepository userRepository;
 
+
+   // TEST POUR LES UITLISATEURS
+   /*
 
 //	Jouter un utilisateur
 	@Test
@@ -70,6 +73,8 @@ class GestionparkautomobileApplicationTests {
 	public void deleteAllUsers(){
 		userRepository.deleteAll();
 	}
+
+    */
 
 
 

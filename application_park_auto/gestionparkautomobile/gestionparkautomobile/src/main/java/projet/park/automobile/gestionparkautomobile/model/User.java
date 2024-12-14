@@ -2,19 +2,17 @@ package projet.park.automobile.gestionparkautomobile.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
-//@Getter
-//@Setter
-//@AllArgsConstructor
-//@NoArgsConstructor
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "TABLE_UTILISATEUR")
 public class User {
 
@@ -39,7 +37,7 @@ public class User {
    private Date created_at;
 
 
-
+    /*
 
     //   Constructeurs
         public User() {
@@ -106,6 +104,9 @@ public class User {
         public void setCreated_at(Date created_at) {
             this.created_at = created_at;
         }
+
+
+     */
 
     @Override
     public String toString() {
