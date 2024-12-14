@@ -1,14 +1,13 @@
-package sourcemind.project.parkingmanagment;
+package com.application.de.gestion.parking.gestiondeparkautomobile;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicromanagementApplication {
+public class GestiondeparkautomobileApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(MicromanagementApplication.class, args);
+		SpringApplication.run(GestiondeparkautomobileApplication.class, args);
 	}
 
 }
