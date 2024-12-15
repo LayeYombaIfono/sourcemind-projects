@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.Date;
+
 import java.util.List;
 
 @Entity
@@ -35,9 +35,11 @@ public class User {
     private  String role;
 
     @Column
-   private Date created_at;
+   private LocalDateTime created_at;
 
-    // Association pour un éventuel audit
+    /*
+    RELATION ENTRE L'UTILISATEUR ET LA TABLE JOURNAL D'ACTIVITE
+ */
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<ActivityLog> activityLogs;
 
