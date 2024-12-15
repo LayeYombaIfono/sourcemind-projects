@@ -2,8 +2,10 @@ package projet.park.automobile.gestionparkautomobile.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import projet.park.automobile.gestionparkautomobile.model.User;
+import projet.park.automobile.gestionparkautomobile.model.Vehicle;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
+
+
 }
