@@ -6,6 +6,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -35,6 +36,10 @@ public class User {
 
     @Column
    private Date created_at;
+
+    // Association pour un éventuel audit
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<ActivityLog> activityLogs;
 
 
     /*
