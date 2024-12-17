@@ -1,0 +1,1 @@
+INSERT INTO table_utilisateur(username, password, email, role) values ('Jean', 'admin122', 'admin@gmail.com', 'ADMIN')

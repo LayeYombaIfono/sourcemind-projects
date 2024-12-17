@@ -15,28 +15,5 @@ public class UserServiceImpl implements UserRepositoryService {
     UserRepository userRepository;
 
 
-    @Override
-    public User findByUsername(String username) {
-        return null;
-    }
 
-    @Override
-    public User findByEmail(String email) {
-        return null;
-    }
-
-    @Override
-    public boolean existsByUsername(String username) {
-        return false;
-    }
-
-    @Override
-    public boolean existsByEmail(String email) {
-        return false;
-    }
-
-    @Override
-    public List<User> getAllUser() {
-        return List.of();
-    }
 }

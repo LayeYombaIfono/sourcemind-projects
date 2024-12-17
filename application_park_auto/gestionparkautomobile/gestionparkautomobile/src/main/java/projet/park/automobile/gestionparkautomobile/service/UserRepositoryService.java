@@ -6,21 +6,34 @@ import java.util.List;
 
 public interface UserRepositoryService {
 
-    // Trouver un utilisateur par son nom d'utilisateur
-    User findByUsername(String username);
+    @Override
+    public User findByUsername(String username) {
+        return null;
+    }
 
-    // Trouver un utilisateur par son email
-    User findByEmail(String email);
+    @Override
+    public User findByEmail(String email) {
+        return null;
+    }
 
-    // Vérifier si un utilisateur existe avec un nom d'utilisateur donné
-    boolean existsByUsername(String username);
+    @Override
+    public boolean existsByUsername(String username) {
+        return false;
+    }
 
-    // Vérifier si un utilisateur existe avec un email donné
-    boolean existsByEmail(String email);
+    @Override
+    public boolean existsByEmail(String email) {
+        return false;
+    }
+
+    @Override
+    public List<User> getAllUser() {
+        return List.of();
+    }
 
 
 //    Affichage des utilisateurs
 
-    List<User>getAllUser();
+   // List<User>getAllUser();
 
 }

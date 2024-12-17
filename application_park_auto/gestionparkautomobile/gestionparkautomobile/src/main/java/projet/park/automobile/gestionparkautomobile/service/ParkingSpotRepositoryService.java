@@ -16,4 +16,6 @@ public interface ParkingSpotRepositoryService {
 
     // Vérifier si une place existe avec un numéro donné
     boolean existsBySpotNumber(String spotNumber);
+
+
 }
