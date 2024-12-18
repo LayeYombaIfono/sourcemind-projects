@@ -12,7 +12,7 @@ import java.util.List;
  * Contrôleur pour gérer les opérations liées aux véhicules.
  */
 @RestController
-@RequestMapping("/api/vehicles")
+@RequestMapping("/api/vehicles") // Définit le chemin pour tous les endpoints
 public class VehicleController {
 
     private final VehicleService vehicleService;
