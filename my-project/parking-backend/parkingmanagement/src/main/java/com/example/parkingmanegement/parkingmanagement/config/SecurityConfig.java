@@ -1,21 +1,10 @@
-package com.example.parkingmanegement.parkingmanagement.security;
+package com.example.parkingmanegement.parkingmanagement.config;
 
-
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+//import org.springframework.context.annotation.Bean;
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-
 //import org.springframework.security.web.SecurityFilterChain;
 
-
-/**
- * Configuration pour le chiffrement des mots de passe.
- */
-
-@Configuration
 public class SecurityConfig {
-
     /**
      * Définit un bean PasswordEncoder qui utilise BCrypt pour chiffrer les mots de passe.
      *

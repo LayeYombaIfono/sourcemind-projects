@@ -1,7 +1,7 @@
 package com.example.parkingmanegement.parkingmanagement.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+//import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  * Chaque utilisateur a un rôle, des identifiants uniques et un e-mail.
  */
 @Entity
-@Data
+//@Data
 //@NoArgsConstructor
 //@AllArgsConstructor
 //@Getter
