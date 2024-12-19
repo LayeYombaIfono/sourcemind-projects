@@ -3,9 +3,10 @@ package com.example.parkingmanegement.parkingmanagement.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "TABLE_UTILISATEUR")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +32,8 @@ public class User {
     protected void onCreate() {
         this.registrationDate = new Date();
     }
+
+
 
 //    CONSTRUCTEUR
 

@@ -6,7 +6,7 @@ import jakarta.persistence.*;
  * Représente une place de parking dans le système.
  */
 @Entity
-@Table(name = "parking_spots")
+@Table(name = "TABLE_PLACE_PARKING")
 public class ParkingSpot {
 
     @Id
@@ -25,11 +25,22 @@ public class ParkingSpot {
     @Column(nullable = false)
     private boolean isOccupied;
 
-    /**
-     * Type de véhicule pouvant occuper cette place (optionnel).
-     */
-    @Column(nullable = true)
-    private String vehicleType;
+
+
+
+//    CONSTRUCTEUR
+
+
+    public ParkingSpot() {
+        super();
+    }
+
+
+    public ParkingSpot(String spotNumber, boolean isOccupied) {
+        this.spotNumber = spotNumber;
+        this.isOccupied = isOccupied;
+
+    }
 
     // Getters et Setters
     public Long getId() {
@@ -56,12 +67,14 @@ public class ParkingSpot {
         isOccupied = occupied;
     }
 
-    public String getVehicleType() {
-        return vehicleType;
-    }
 
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
-    }
 
+    @Override
+    public String toString() {
+        return "ParkingSpot{" +
+                "id=" + id +
+                ", spotNumber='" + spotNumber + '\'' +
+                ", isOccupied=" + isOccupied +
+                '}';
+    }
 }

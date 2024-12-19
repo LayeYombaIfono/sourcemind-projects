@@ -1,13 +1,15 @@
 package com.example.parkingmanegement.parkingmanagement.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+
+import java.util.Date;
+
 
 /**
  * Représente un journal des activités dans le système.
  */
 @Entity
-@Table(name = "activity_logs")
+@Table(name = "TABLE_JOURNAL_ACTIVITE")
 public class ActivityLog {
 
     @Id
@@ -15,15 +17,26 @@ public class ActivityLog {
     private Long id;
 
     @Column(nullable = false)
-    private String action;
+    private Date entryTime; // Date et heure d'entrée
 
-    @Column(nullable = false)
-    private String performedBy;
+    @Column
+    private Date exitTime; // Date et heure de sortie (optionnel)
 
-    @Column(nullable = false)
-    private LocalDateTime timestamp;
 
-    // Getters et Setters
+
+    //    CONSTRUCTEUR
+    public ActivityLog() {
+        super();
+    }
+
+    public ActivityLog(Date entryTime, Date exitTime) {
+        this.entryTime = entryTime;
+        this.exitTime = exitTime;
+    }
+
+
+//    GETTERS ET SETTERS
+
     public Long getId() {
         return id;
     }
@@ -32,27 +45,28 @@ public class ActivityLog {
         this.id = id;
     }
 
-    public String getAction() {
-        return action;
+    public Date getEntryTime() {
+        return entryTime;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setEntryTime(Date entryTime) {
+        this.entryTime = entryTime;
     }
 
-    public String getPerformedBy() {
-        return performedBy;
+    public Date getExitTime() {
+        return exitTime;
     }
 
-    public void setPerformedBy(String performedBy) {
-        this.performedBy = performedBy;
+    public void setExitTime(Date exitTime) {
+        this.exitTime = exitTime;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+    @Override
+    public String toString() {
+        return "ActivityLog{" +
+                "id=" + id +
+                ", entryTime=" + entryTime +
+                ", exitTime=" + exitTime +
+                '}';
     }
 }

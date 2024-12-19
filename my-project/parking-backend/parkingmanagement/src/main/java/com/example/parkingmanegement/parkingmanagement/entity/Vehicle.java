@@ -3,11 +3,13 @@ package com.example.parkingmanegement.parkingmanagement.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 /**
  * Classe représentant un véhicule dans le système.
  */
 @Entity
-@Table(name = "vehicles")
+@Table(name = "TABLE_VEHICULE")
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,36 +28,40 @@ public class Vehicle {
     private String model;
 
     /**
-     * Marque du véhicule.
+     * Proprietaire
      */
     @Column(nullable = false)
-    private String brand;
+    private String ownerName;
+
 
     /**
      * Couleur du véhicule.
      */
-    @Column(nullable = true)
+    @Column()
     private String color;
 
     /**
      * Type du véhicule (voiture, moto, etc.).
      */
     @Column(nullable = false)
-    private String type;
+    private String fuelType;
+
+
+
+//    CONSTRUCTEUR
 
     public Vehicle() {
         super();
     }
 
-    public Vehicle(Long id, String licensePlate, String model, String brand, String color, String type) {
-        this.id = id;
+
+    public Vehicle(String licensePlate, String model, String ownerName, String color, String fuelType) {
         this.licensePlate = licensePlate;
         this.model = model;
-        this.brand = brand;
+        this.ownerName = ownerName;
         this.color = color;
-        this.type = type;
+        this.fuelType = fuelType;
     }
-
 
     public Long getId() {
         return id;
@@ -81,12 +87,12 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getOwnerName() {
+        return ownerName;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
     public String getColor() {
@@ -97,14 +103,13 @@ public class Vehicle {
         this.color = color;
     }
 
-    public String getType() {
-        return type;
+    public String getFuelType() {
+        return fuelType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
     }
-
 
     @Override
     public String toString() {
@@ -112,9 +117,9 @@ public class Vehicle {
                 "id=" + id +
                 ", licensePlate='" + licensePlate + '\'' +
                 ", model='" + model + '\'' +
-                ", brand='" + brand + '\'' +
+                ", brand='" + ownerName + '\'' +
                 ", color='" + color + '\'' +
-                ", type='" + type + '\'' +
+                ", type='" + fuelType + '\'' +
                 '}';
     }
 
