@@ -89,14 +89,16 @@
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
+			<version>5.14.2</version> <!-- C'est la version actuelle -->
 			<scope>test</scope>
 		</dependency>
+
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 
 		<dependency>
 			<groupId>net.bytebuddy</groupId>
@@ -115,12 +117,17 @@
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
+
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+
 		</plugins>
+
 	</build>
+
 </project>

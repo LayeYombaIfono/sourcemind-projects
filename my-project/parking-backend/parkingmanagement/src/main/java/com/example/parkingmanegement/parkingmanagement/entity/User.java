@@ -1,72 +1,45 @@
 package com.example.parkingmanegement.parkingmanagement.entity;
 
 import jakarta.persistence.*;
-//import lombok.*;
-
 import java.time.LocalDateTime;
+import java.util.Date;
 
-/**
- * Classe représentant un utilisateur dans le système.
- * Chaque utilisateur a un rôle, des identifiants uniques et un e-mail.
- */
 @Entity
-//@Data
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Getter
-//@Setter
-
 @Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * Nom d'utilisateur unique pour se connecter.
-     */
     @Column(nullable = false, unique = true)
     private String username;
 
-    /**
-     * Mot de passe de l'utilisateur (doit être sécurisé).
-     */
     @Column(nullable = false)
     private String password;
 
-    /**
-     * Adresse e-mail de l'utilisateur.
-     */
     @Column(nullable = false, unique = true)
     private String email;
 
-    /**
-     * Rôle de l'utilisateur (ex: ADMIN, USER).
-     */
+
     @Column(nullable = false)
     private String role;
 
-    /**
-     * Date et heure d'enregistrement de l'utilisateur.
-     */
     @Column(nullable = false, updatable = false)
-    private LocalDateTime registrationDate;
+    private Date registrationDate;
 
-    /**
-     * Initialiser la date d'enregistrement lors de la création.
-     */
     @PrePersist
     protected void onCreate() {
-        this.registrationDate = LocalDateTime.now();
+        this.registrationDate = new Date();
     }
+
+//    CONSTRUCTEUR
+
 
     public User() {
         super();
     }
 
-    public User(Long id, String username, String password, String email, String role, LocalDateTime registrationDate) {
-        this.id = id;
+    public User( String username, String password, String email, String role, Date registrationDate) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -74,7 +47,7 @@ public class User {
         this.registrationDate = registrationDate;
     }
 
-
+    // Getters et setters
     public Long getId() {
         return id;
     }
@@ -115,11 +88,24 @@ public class User {
         this.role = role;
     }
 
-    public LocalDateTime getRegistrationDate() {
+    public Date getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(LocalDateTime registrationDate) {
+    public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", role='" + role + '\'' +
+                ", registrationDate=" + registrationDate +
+                '}';
     }
 }

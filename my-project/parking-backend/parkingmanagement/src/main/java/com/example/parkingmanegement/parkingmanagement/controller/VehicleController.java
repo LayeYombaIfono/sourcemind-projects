@@ -1,8 +1,7 @@
 package com.example.parkingmanegement.parkingmanagement.controller;
 
 import com.example.parkingmanegement.parkingmanagement.entity.Vehicle;
-import com.example.parkingmanegement.parkingmanagement.repository.VehicleRepository;
-import com.example.parkingmanegement.parkingmanagement.service.VehicleService;
+import com.example.parkingmanegement.parkingmanagement.services.VehicleServices;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +14,9 @@ import java.util.List;
 @RequestMapping("/api/vehicles") // Définit le chemin pour tous les endpoints
 public class VehicleController {
 
-    private final VehicleService vehicleService;
+    private final VehicleServices vehicleService;
 
-    public VehicleController(VehicleService vehicleService) {
+    public VehicleController(VehicleServices vehicleService) {
         this.vehicleService = vehicleService;
     }
 

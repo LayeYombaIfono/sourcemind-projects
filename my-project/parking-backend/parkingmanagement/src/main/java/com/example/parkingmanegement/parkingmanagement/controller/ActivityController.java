@@ -1,7 +1,7 @@
 package com.example.parkingmanegement.parkingmanagement.controller;
 
 import com.example.parkingmanegement.parkingmanagement.entity.ActivityLog;
-import com.example.parkingmanegement.parkingmanagement.service.ActivityLogService;
+import com.example.parkingmanegement.parkingmanagement.services.ActivityLogServices;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,15 +15,15 @@ import java.util.List;
 @RequestMapping("/api/activity-logs")
 public class ActivityController {
 
-    private final ActivityLogService activityLogService;
+    private final ActivityLogServices activityLogServices;
 
     /**
      * Constructeur pour injecter le service.
-     * @param activityLogService Service des journaux d'activités.
+     * @param activityLogServices Service des journaux d'activités.
      */
 
-    public ActivityController(ActivityLogService activityLogService) {
-        this.activityLogService = activityLogService;
+    public ActivityController(ActivityLogServices activityLogServices) {
+        this.activityLogServices = activityLogServices;
     }
 
     /**
@@ -32,7 +32,7 @@ public class ActivityController {
      */
     @GetMapping
     public ResponseEntity<List<ActivityLog>> getAllActivities() {
-        List<ActivityLog> logs = activityLogService.getAllActivities();
+        List<ActivityLog> logs = activityLogServices.getAllActivities();
         return new ResponseEntity<>(logs, HttpStatus.OK);
     }
 
@@ -43,7 +43,7 @@ public class ActivityController {
      */
     @PostMapping
     public ResponseEntity<ActivityLog> addActivity(@RequestBody ActivityLog log) {
-        ActivityLog savedLog = activityLogService.addActivity(log.getAction(), log.getPerformedBy());
+        ActivityLog savedLog = activityLogServices.addActivity(log.getAction(), log.getPerformedBy());
         return new ResponseEntity<>(savedLog, HttpStatus.CREATED);
     }
 
@@ -54,7 +54,7 @@ public class ActivityController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteActivityLog(@PathVariable Long id) {
-        activityLogService.deleteActivityLog(id);
+        activityLogServices.deleteActivityLog(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

@@ -1,4 +1,4 @@
-package com.example.parkingmanegement.parkingmanagement.service;
+package com.example.parkingmanegement.parkingmanagement.services;
 
 import com.example.parkingmanegement.parkingmanagement.entity.ParkingSpot;
 import com.example.parkingmanegement.parkingmanagement.repository.ParkingSpotRepository;
@@ -11,10 +11,10 @@ import java.util.Optional;
  * Gère les opérations liées aux places de parking.
  */
 @Service
-public class ParkingSpotService {
+public class ParkingSpotServices {
     private final ParkingSpotRepository parkingSpotRepository;
 
-    public ParkingSpotService(ParkingSpotRepository parkingSpotRepository) {
+    public ParkingSpotServices(ParkingSpotRepository parkingSpotRepository) {
         this.parkingSpotRepository = parkingSpotRepository;
     }
 

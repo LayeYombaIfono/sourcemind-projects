@@ -1,4 +1,4 @@
-package com.example.parkingmanegement.parkingmanagement.service;
+package com.example.parkingmanegement.parkingmanagement.services;
 
 
 import com.example.parkingmanegement.parkingmanagement.entity.ActivityLog;
@@ -13,11 +13,11 @@ import java.util.List;
  * Service pour gérer les journaux d'activités.
  */
 @Service
-public class ActivityLogService {
+public class ActivityLogServices {
 
     private final ActivityLogRepository activityLogRepository;
 
-    public ActivityLogService(ActivityLogRepository activityLogRepository) {
+    public ActivityLogServices(ActivityLogRepository activityLogRepository) {
         this.activityLogRepository = activityLogRepository;
     }
 

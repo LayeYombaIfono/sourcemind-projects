@@ -1,81 +1,46 @@
 package com.example.parkingmanegement.parkingmanagement.controller;
 
 import com.example.parkingmanegement.parkingmanagement.entity.User;
-import com.example.parkingmanegement.parkingmanagement.service.UserService;
+import com.example.parkingmanegement.parkingmanagement.services.UserServiceImpl;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Contrôleur pour gérer les opérations liées aux utilisateurs.
- */
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/parking")
 public class UserController {
-    private final UserService userService;
+    private final UserServiceImpl userServiceImpl;
 
-    /**
-     * Constructeur pour injecter UserService.
-     * @param userService instance de UserService.
-     */
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public UserController(UserServiceImpl userServiceImpl) {
+        this.userServiceImpl = userServiceImpl;
     }
 
-
-    /**
-     * Enregistre un nouvel utilisateur dans le système.
-     * @param user les détails de l'utilisateur à enregistrer.
-     * @return l'utilisateur enregistré.
-     */
-    @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody User user) {
-        return ResponseEntity.ok(userService.registerUser(user));
+    @PostMapping
+    public ResponseEntity<User> addUser(@RequestBody User user) {
+        User savedUser = userServiceImpl.registerUser(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
     }
 
-    /**
-     * Récupère la liste de tous les utilisateurs.
-     * @return la liste des utilisateurs.
-     */
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
-        return ResponseEntity.ok(userService.getAllUsers());
+        return ResponseEntity.ok(userServiceImpl.getAllUsers());
     }
 
-    /**
-     * Récupère un utilisateur par son ID.
-     * @param id l'identifiant de l'utilisateur.
-     * @return l'utilisateur trouvé.
-     */
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+        return ResponseEntity.ok(userServiceImpl.getUserById(id));
     }
-
-    /**
-     * Met à jour un utilisateur existant.
-     * @param id l'identifiant de l'utilisateur.
-     * @param user les nouvelles informations de l'utilisateur.
-     * @return l'utilisateur mis à jour.
-     */
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
-        return ResponseEntity.ok(userService.updateUser(id, user));
+        return ResponseEntity.ok(userServiceImpl.updateUser(id, user));
     }
-
-    /**
-     * Supprime un utilisateur par son ID.
-     * @param id l'identifiant de l'utilisateur.
-     * @return une réponse vide en cas de succès.
-     */
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+        userServiceImpl.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
-
-
 }

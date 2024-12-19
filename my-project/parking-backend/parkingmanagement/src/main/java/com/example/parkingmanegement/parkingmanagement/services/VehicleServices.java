@@ -1,4 +1,4 @@
-package com.example.parkingmanegement.parkingmanagement.service;
+package com.example.parkingmanegement.parkingmanagement.services;
 
 
 import com.example.parkingmanegement.parkingmanagement.entity.Vehicle;
@@ -10,12 +10,12 @@ import java.util.Optional;
 /**
  * Enregistrer un nouveau véhicule.
  */
-public class VehicleService {
+public class VehicleServices {
 
     private final VehicleRepository vehicleRepository;
 
 
-    public VehicleService(VehicleRepository vehicleRepository) {
+    public VehicleServices(VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;
     }
 
@@ -43,7 +43,7 @@ public class VehicleService {
     /**
      * Récupérer un véhicule par son numéro d'immatriculation.
      */
-    public Vehicle getVehicleByLicensePlate(String licensePlate) {
+    public List<Vehicle> getVehicleByLicensePlate(String licensePlate) {
         return vehicleRepository.findByLicensePlate(licensePlate);
     }
 
