@@ -4,14 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Management</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>Accueil - Gestion de Parking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100">
-    <div id="app">
-        <h1 class="text-2xl font-bold text-center mt-4">Parking Management</h1>
-    </div>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Gestion de Parking</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#features" class="hover:underline">Fonctionnalités</a></li>
+                    <li><a href="#stats" class="hover:underline">Statistiques</a></li>
+                    <li><a href="./admin.html" class="hover:underline">Administration</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-200 py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6">Bienvenue dans la solution de gestion de parking moderne</h2>
+            <p class="text-lg mb-8">Optimisez la gestion de vos parkings grâce à notre interface intuitive et
+                professionnelle.</p>
+            <a href="./admin.html" class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700">Accéder à
+                l'administration</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-8">Fonctionnalités clés</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <svg class="h-16 w-16 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16 12H8m0 0H6m2 0l1.5 1.5M8 12l1.5-1.5m0 0l6-6m0 0L18 6m-6 0v12m0-12h6"></path>
+                    </svg>
+                    <h4 class="text-xl font-bold mb-2">Gestion des véhicules</h4>
+                    <p>Ajoutez, modifiez et supprimez facilement les informations des véhicules.</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <svg class="h-16 w-16 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12l4-4 4 4m0 8l-4-4-4 4"></path>
+                    </svg>
+                    <h4 class="text-xl font-bold mb-2">Statistiques en temps réel</h4>
+                    <p>Obtenez une vue d'ensemble des entrées, sorties et places disponibles.</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <svg class="h-16 w-16 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 20H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v5m-6 5h6m0 0v2m0-2l-2 2m2-2l2 2">
+                        </path>
+                    </svg>
+                    <h4 class="text-xl font-bold mb-2">Sécurité avancée</h4>
+                    <p>Accès réservé aux administrateurs avec gestion des rôles et permissions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="bg-gray-200 py-12">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-8">Statistiques générales</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h4 class="text-xl font-bold">Nombre total de places</h4>
+                    <p class="text-3xl font-semibold text-blue-600">120</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h4 class="text-xl font-bold">Places disponibles</h4>
+                    <p class="text-3xl font-semibold text-green-600">45</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h4 class="text-xl font-bold">Entrées aujourd'hui</h4>
+                    <p class="text-3xl font-semibold text-purple-600">30</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white text-center py-6">
+        <p>&copy; 2024 Gestion de Parking. Tous droits réservés.</p>
+    </footer>
 </body>
 
 </html>

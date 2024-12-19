@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Véhicules - Gestion du stationnement</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-8">
+        <h2 class="text-2xl font-bold mb-4">GESTION DES VEHICULES</h2>
+
+        <!-- Add Vehicle Form -->
+        <section class="mt-12 mb-10">
+            <h2 class="text-2xl font-bold mb-4">Ajouter un nouveau véhicule</h2>
+            <form id="add-vehicle-form" class="bg-white shadow-md rounded-lg p-6">
+                <div class="mb-4">
+                    <label for="license-plate" class="block text-sm font-medium text-gray-700">License Plate</label>
+                    <input type="text" id="license-plate" name="license-plate"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div class="mb-4">
+                    <label for="owner" class="block text-sm font-medium text-gray-700">Owner Name</label>
+                    <input type="text" id="owner" name="owner"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div class="mb-4">
+                    <label for="contact" class="block text-sm font-medium text-gray-700">Contact Number</label>
+                    <input type="text" id="contact" name="contact"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Add
+                    Vehicle</button>
+            </form>
+        </section>
+
+
+        {# Section tableau #}
+
+        <section>
+            <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-3 px-4 text-left">Plaque d'immatriculation</th>
+                        <th class="py-3 px-4 text-left">Nom complet</th>
+                        <th class="py-3 px-4 text-left">Téléphone</th>
+                        <th class="py-3 px-4 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="py-3 px-4">ABC-123</td>
+                        <td class="py-3 px-4">John Doe</td>
+                        <td class="py-3 px-4">+123456789</td>
+                        <td class="py-3 px-4">
+                            <button class="bg-blue-500 text-white py-1 px-2 rounded hover:bg-blue-600">Edit</button>
+                            <button class="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600">Delete</button>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-3 px-4">XYZ-456</td>
+                        <td class="py-3 px-4">Jane Smith</td>
+                        <td class="py-3 px-4">+987654321</td>
+                        <td class="py-3 px-4">
+                            <button class="bg-blue-500 text-white py-1 px-2 rounded hover:bg-blue-600">Edit</button>
+                            <button class="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer bg-gray-500 text-white text-center py-4 mt-12 h-lvh p-96">
+        <p>&copy; 2024 Gestion du stationnement. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../include-navbar.js"></script>
+
+
+</body>
+
+</html>

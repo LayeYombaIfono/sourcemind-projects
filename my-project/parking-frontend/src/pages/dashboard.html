@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Dashboard - Parking Management</title>
+    <link href="../styles/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <header class="absolute inset-x-0 top-0 z-50" id="navbar-placeholder">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <h1 class="sr-only">Gestion de parking</h1>
+                </a>
+            </div>
+            <div class="flex lg:hidden">
+                <button type="button"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Menu</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="../index.html" class="text-xl/6 font-semibold text-gray-900">Acceuil</a>
+                <a href="../pages/vehicles.html" class="text-xl/6 font-semibold text-gray-900">Véhicules</a>
+                <a href="../pages/parking-spots.html" class="text-xl/6 font-semibold text-gray-900">Places</a>
+                <a href="../pages/activity-log.html" class="text-xl/6 font-semibold text-gray-900">Journal</a>
+                <a href="../pages/dashboard.html" class="text-xl/6 font-semibold text-gray-900">Dashboard</a>
+
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="#" class="text-xl/6 font-semibold text-gray-900">Déconnexion <span
+                        aria-hidden="true">&rarr;</span></a>
+            </div>
+        </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div class="lg:hidden" role="dialog" aria-modal="true">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-50"></div>
+            <div
+                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                        <img class="h-8 w-auto"
+                            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                    </a>
+                    <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Close menu</span>
+                        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true" data-slot="icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Product</a>
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Features</a>
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Marketplace</a>
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
+                        </div>
+                        <div class="py-6">
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log
+                                in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Dashboard Overview -->
+    <main class="container mx-auto mt-8">
+        <!-- Vue d'ensemble du tableau de bord -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-lg font-bold">Nombre total de places</h2>
+                <p class="text-3xl font-semibold text-blue-600">120</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-lg font-bold">Places disponibles</h2>
+                <p class="text-3xl font-semibold text-green-600">45</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-lg font-bold">Véhicules enregistrés</h2>
+                <p class="text-3xl font-semibold text-yellow-600">85</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-lg font-bold">Entrées aujourd'hui</h2>
+                <p class="text-3xl font-semibold text-purple-600">30</p>
+            </div>
+        </section>
+
+        <!-- Formulaire d'ajout de véhicule -->
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-4">Ajouter un nouveau véhicule</h2>
+            <form id="add-vehicle-form" class="bg-white shadow-md rounded-lg p-6">
+                <div class="mb-4">
+                    <label for="license-plate" class="block text-xl font-medium text-gray-700">Plaque
+                        d'immatriculation</label>
+                    <input type="text" id="license-plate" name="license-plate"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        placeholder=" Entrer le numéro de Plaque d'immatriculation" required>
+                </div>
+                <div class="mb-4">
+                    <label for="owner" class="block text-xl font-medium text-gray-700">Nom du propriétaire</label>
+                    <input type="text" id="owner" name="owner"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        placeholder="Entrer le nom complet du propriétaire" required>
+                </div>
+                <div class="mb-4">
+                    <label for="contact" class="block text-xl font-medium text-gray-700">Numéro de contact</label>
+                    <input type="text" id="contact" name="contact"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        placeholder="Entrer un numéro de téléphone" required>
+                </div>
+                <div class="mb-4">
+                    <label for="model" class="block text-xl font-medium text-gray-700">Modèle du véhicule</label>
+                    <input type="text" id="model" name="model"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        placeholder="Entrer le modèle du véhicule">
+                </div>
+                <div class="mb-4">
+                    <label for="color" class="block text-xl font-medium text-gray-700">Couleur</label>
+                    <input type="text" id="color" name="color"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        placeholder="Entrer la couleur">
+                </div>
+                <div class="mb-4">
+                    <label for="fuel-type" class="block text-xl font-medium text-gray-700">Type de carburant</label>
+                    <select id="fuel-type" name="fuel-type"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        required>
+                        <option value="Gasoline">Essence</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Electric">Électrique</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <span class="block text-xl font-medium text-gray-700">Statut</span>
+                    <div class="flex items-center space-x-4 mt-2">
+                        <label class="inline-flex items-center">
+                            <input type="radio" id="status-parked" name="status" value="Garé"
+                                class="form-radio h-5 w-5 text-blue-600">
+                            <span class="ml-2 text-gray-700 text-xl">Garé</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" id="status-exited" name="status" value="Sorti"
+                                class="form-radio h-5 w-5 text-blue-600">
+                            <span class="ml-2 text-gray-700 text-xl">Sorti</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class=" bg-blue-900 text-white text-xl py-2 px-4 rounded-lg hover:bg-blue-800">
+                    Ajouter le véhicule
+                </button>
+            </form>
+        </section>
+
+        <!-- Journal des activités -->
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-4">Activités récentes</h2>
+            <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-3 px-4 text-left">Plaque</th>
+                        <th class="py-3 px-4 text-left">Propriétaire</th>
+                        <th class="py-3 px-4 text-left">Contact</th>
+                        <th class="py-3 px-4 text-left">Modèle</th>
+                        <th class="py-3 px-4 text-left">Couleur</th>
+                        <th class="py-3 px-4 text-left">Carburant</th>
+                        <th class="py-3 px-4 text-left">Statut</th>
+                        <th class="py-3 px-4 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="activity-log">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer bg-gray-500 text-white text-center py-4 mt-12 h-lvh p-96">
+        <p>&copy; Design by IFONO-DEV 2024 Gestion du stationnement. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../include-navbar.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
