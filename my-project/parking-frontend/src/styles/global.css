@@ -1,11 +1,10 @@
-
-body{
+body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-nav{
+/* nav{
     background-color: rgb(255, 255, 255);
     position: fixed;
     top: 0;
@@ -13,33 +12,34 @@ nav{
     display: flex;
     padding: 2rem 1rem!important;
 
-}
+} */
 
 
-main{
+main {
     /* height: 100vh!important; */
-    padding-top: 10rem!important;
+    padding-top: 10rem !important;
 
 }
 
 
 .footer {
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(219, 219, 219);
     height: 200px;
+
 
 }
 
 /* Formulaire de connexion */
 
-.form{
+.form {
     background-color: rgb(160, 74, 74) !important;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        width: 100%;
-    
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+
 }
 
-#login{
+#login {
     background-color: rgb(31, 31, 31);
     padding: 2rem;
     width: 100%;
@@ -48,20 +48,20 @@ main{
 
 }
 
-#login input{
+#login input {
     border: 1px solid black;
 }
 
 /* STYLE PAGE DASHBOARD */
 
-#add-vehicle-form input{
+#add-vehicle-form input {
     padding: 1rem;
     border: 1px solid rgb(133, 133, 133);
     font-size: 1.5em;
     color: black;
 }
 
-#fuel-type{
+#fuel-type {
     margin-bottom: 1rem;
     padding: 1rem;
     border: 1px solid rgb(133, 133, 133);

@@ -6,41 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Gestion de Parking</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/global.css">
 </head>
 
 <body class="bg-gray-100 text-gray-800">
     <!-- Header -->
-    <header class="bg-blue-600 text-white py-6">
+    <header class=" bg-white text-black py-6  w-100 top-0 sticky z-10">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Gestion de Parking</h1>
+            <a href="./index.html">
+                <h1 class="text-3xl font-bold text-blue-800 hover:text-blue-900">Gestion de Parking</h1>
+            </a>
             <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#features" class="hover:underline">Fonctionnalités</a></li>
-                    <li><a href="#stats" class="hover:underline">Statistiques</a></li>
-                    <li><a href="./admin.html" class="hover:underline">Administration</a></li>
+                <ul id="nav-menu" class="flex space-x-4 items-center">
+                    <!-- Menu par défaut visible -->
+                    <li><a href="./index.html" class="hover:underline">Accueil</a></li>
+                    <li><a href="./login.html" class="hover:underline">Connexion</a></li>
+                    <li><a href="./register.html" class="hover:underline">Inscription</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gray-200 py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6">Bienvenue dans la solution de gestion de parking moderne</h2>
-            <p class="text-lg mb-8">Optimisez la gestion de vos parkings grâce à notre interface intuitive et
-                professionnelle.</p>
-            <a href="./admin.html" class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700">Accéder à
-                l'administration</a>
+    <section class="relative w-full h-96 vehicle">
+        <div class="absolute inset-0">
+            <div class="carousel w-full h-full">
+                <div class="carousel-item w-full h-full">
+                    <img src="./assets/images/car-park.jpg" alt="Véhicule 3" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900 flex items-center justify-center">
+            <h2 class="text-4xl font-bold text-white">Bienvenue dans la solution de gestion de parking moderne</h2>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-12">
+    <section id="features" class="py-12 bg-gray-100">
         <div class="container mx-auto text-center">
             <h3 class="text-3xl font-bold mb-8">Fonctionnalités clés</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <svg class="h-16 w-16 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
+                <div class="bg-white text-blue-600 shadow-md rounded-lg p-6">
+                    <svg class="h-16 w-16 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M16 12H8m0 0H6m2 0l1.5 1.5M8 12l1.5-1.5m0 0l6-6m0 0L18 6m-6 0v12m0-12h6"></path>
@@ -48,16 +56,16 @@
                     <h4 class="text-xl font-bold mb-2">Gestion des véhicules</h4>
                     <p>Ajoutez, modifiez et supprimez facilement les informations des véhicules.</p>
                 </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <svg class="h-16 w-16 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
+                <div class="bg-white text-blue-600 shadow-md rounded-lg p-6">
+                    <svg class="h-16 w-16 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8 12l4-4 4 4m0 8l-4-4-4 4"></path>
                     </svg>
                     <h4 class="text-xl font-bold mb-2">Statistiques en temps réel</h4>
                     <p>Obtenez une vue d'ensemble des entrées, sorties et places disponibles.</p>
                 </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <svg class="h-16 w-16 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
+                <div class="bg-white text-blue-600 shadow-md rounded-lg p-6">
+                    <svg class="h-16 w-16 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 20H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v5m-6 5h6m0 0v2m0-2l-2 2m2-2l2 2">
@@ -71,30 +79,71 @@
     </section>
 
     <!-- Statistics Section -->
-    <section id="stats" class="bg-gray-200 py-12">
+    <section id="stats" class="py-12 bg-gray-200">
         <div class="container mx-auto text-center">
             <h3 class="text-3xl font-bold mb-8">Statistiques générales</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="bg-white text-purple-600 shadow-md rounded-lg p-6">
                     <h4 class="text-xl font-bold">Nombre total de places</h4>
-                    <p class="text-3xl font-semibold text-blue-600">120</p>
+                    <p class="text-3xl font-semibold">120</p>
                 </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="bg-white text-purple-600 shadow-md rounded-lg p-6">
                     <h4 class="text-xl font-bold">Places disponibles</h4>
-                    <p class="text-3xl font-semibold text-green-600">45</p>
+                    <p class="text-3xl font-semibold">45</p>
                 </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="bg-white text-purple-600 shadow-md rounded-lg p-6">
                     <h4 class="text-xl font-bold">Entrées aujourd'hui</h4>
-                    <p class="text-3xl font-semibold text-purple-600">30</p>
+                    <p class="text-3xl font-semibold">30</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-600 text-white text-center py-6">
-        <p>&copy; 2024 Gestion de Parking. Tous droits réservés.</p>
+    <footer class=" text-black text-center py-6 footer">
+        <p>&copy; Design by IFONO-DEV 2024 Gestion de Parking. Tous droits réservés.</p>
     </footer>
+
+    <!-- Script pour gérer les menus dynamiquement -->
+    <script defer>
+        // Exemple de rôle : "utilisateur", "manager", ou "admin"
+        const role = "utilisateur"; // Remplacez par une logique dynamique (API, session, etc.)
+
+        // Menus par rôle
+        const menus = {
+            utilisateur: [
+                { text: "Accueil", link: "./index.html" },
+                { text: "Mon compte", link: "./account.html" },
+                { text: "Réservations", link: "./reservations.html" },
+                { text: "Déconnexion", link: "./logout.html" }
+            ],
+            manager: [
+                { text: "Accueil", link: "./index.html" },
+                { text: "Gestion des réservations", link: "./manage-reservations.html" },
+                { text: "Statistiques", link: "./stats.html" },
+                { text: "Déconnexion", link: "./logout.html" }
+            ],
+            admin: [
+                { text: "Accueil", link: "./index.html" },
+                { text: "Tableau de bord", link: "./dashboard.html" },
+                { text: "Gestion des utilisateurs", link: "./manage-users.html" },
+                { text: "Statistiques", link: "./stats.html" },
+                { text: "Déconnexion", link: "./logout.html" }
+            ]
+        };
+
+        // Remplir le menu en fonction du rôle
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.innerHTML = ""; // Efface le menu par défaut
+        menus[role].forEach(menu => {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="${menu.link}" class="hover:underline">${menu.text}</a>`;
+            navMenu.appendChild(li);
+        });
+    </script>
+    <script src="./js/main.js"></script>
+
+
 </body>
 
 </html>
