@@ -11,7 +11,7 @@
 
 <body class="bg-gray-100 text-gray-800">
     <!-- Header -->
-    <header class=" bg-white text-black py-6  w-100 top-0 sticky z-10">
+    <header class=" bg-white text-black py-6  w-100 top-0 sticky z-10" id="header">
         <div class="container mx-auto flex justify-between items-center">
             <a href="./index.html">
                 <h1 class="text-3xl font-bold text-blue-800 hover:text-blue-900">Gestion de Parking</h1>
@@ -19,9 +19,19 @@
             <nav>
                 <ul id="nav-menu" class="flex space-x-4 items-center">
                     <!-- Menu par défaut visible -->
-                    <li><a href="./index.html" class="hover:underline">Accueil</a></li>
-                    <li><a href="./login.html" class="hover:underline">Connexion</a></li>
-                    <li><a href="./register.html" class="hover:underline">Inscription</a></li>
+                    <li><a href="./index.html" class="hover:underline" target="_blank">Accueil</a></li>
+                    <li><a href="./pages/login.html" class="hover:underline" target="_blank">Connexion</a></li>
+                    <li><a href="./register.html" class="hover:underline" target="_blank">Inscription</a></li>
+                    <!-- Menu par défaut visible -->
+                    <li id="account-menu" class="hidden relative">
+                        <a href="#" class="hover:underline">Mon compte</a>
+                        <ul
+                            class="absolute bg-white text-gray-800 shadow-md rounded-lg mt-2 right-0 hidden group-hover:block">
+                            <li><a href="./profile.html" class="block px-4 py-2 hover:bg-gray-200">Profil</a></li>
+                            <li><a href="./settings.html" class="block px-4 py-2 hover:bg-gray-200">Paramètres</a></li>
+                            <li><a href="./logout.html" class="block px-4 py-2 hover:bg-gray-200">Déconnexion</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -99,6 +109,65 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-8">Ce que disent nos utilisateurs</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="./assets/images/temoin3.jpg" alt="Avatar" class="w-20 h-20 mx-auto rounded-full mb-4">
+                    <h4 class="text-xl font-bold mb-2">Jean Dupont</h4>
+                    <p class="text-sm text-gray-600">"La gestion de mon parking n'a jamais été aussi simple et efficace.
+                        Je recommande vivement cette solution !"</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="./assets/images/temoin1.jpg" alt="Avatar" class="w-20 h-20 mx-auto rounded-full mb-4">
+                    <h4 class="text-xl font-bold mb-2">Marie Curie</h4>
+                    <p class="text-sm text-gray-600">"Une interface intuitive et des fonctionnalités pratiques pour
+                        suivre les activités du parking."</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="./assets/images/man.jpg" alt="Avatar" class="w-20 h-20 mx-auto rounded-full mb-4">
+                    <h4 class="text-xl font-bold mb-2">Ali Ben Achour</h4>
+                    <p class="text-sm text-gray-600">"La sécurité et les statistiques en temps réel sont des atouts
+                        indispensables pour un manager."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-12 bg-white">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-8">Questions Fréquemment Posées</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-100 shadow-md rounded-lg p-6">
+                    <h4 class="text-lg font-bold mb-2">Comment puis-je m'inscrire ?</h4>
+                    <p class="text-sm text-gray-600">Cliquez sur le bouton <a href="header"
+                            class="hover:underline">Inscription</a> en haut de la page et
+                        remplissez le formulaire.</p>
+                </div>
+                <div class="bg-gray-100 shadow-md rounded-lg p-6">
+                    <h4 class="text-lg font-bold mb-2">Puis-je voir mes réservations ?</h4>
+                    <p class="text-sm text-gray-600">Oui, connectez-vous et accédez à la section "Réservations" dans
+                        votre tableau de bord.</p>
+                </div>
+                <div class="bg-gray-100 shadow-md rounded-lg p-6">
+                    <h4 class="text-lg font-bold mb-2">Quels sont les rôles disponibles ?</h4>
+                    <p class="text-sm text-gray-600">Les rôles incluent Utilisateur, Manager et Administrateur, chacun
+                        avec des permissions spécifiques.</p>
+                </div>
+                <div class="bg-gray-100 shadow-md rounded-lg p-6">
+                    <h4 class="text-lg font-bold mb-2">Comment contacter le support ?</h4>
+                    <p class="text-sm text-gray-600">Utilisez le formulaire de contact disponible en bas de la page pour
+                        poser vos questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- Footer -->
     <footer class=" text-black text-center py-6 footer">
         <p>&copy; Design by IFONO-DEV 2024 Gestion de Parking. Tous droits réservés.</p>
@@ -106,6 +175,23 @@
 
     <!-- Script pour gérer les menus dynamiquement -->
     <script defer>
+        // Simulation de l'état de connexion
+        const isLoggedIn = true; // Remplacez par une logique réelle
+
+        // Gestion des menus
+        const loginMenu = document.getElementById("login-menu");
+        const registerMenu = document.getElementById("register-menu");
+        const accountMenu = document.getElementById("account-menu");
+
+        if (isLoggedIn) {
+            loginMenu.classList.add("hidden");
+            registerMenu.classList.add("hidden");
+            accountMenu.classList.remove("hidden");
+        } else {
+            loginMenu.classList.remove("hidden");
+            registerMenu.classList.remove("hidden");
+            accountMenu.classList.add("hidden");
+        }
         // Exemple de rôle : "utilisateur", "manager", ou "admin"
         const role = "utilisateur"; // Remplacez par une logique dynamique (API, session, etc.)
 

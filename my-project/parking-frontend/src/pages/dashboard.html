@@ -33,15 +33,15 @@
                 </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-                <a href="../index.html" class="text-xl/6 font-semibold text-gray-900">Acceuil</a>
-                <a href="../pages/vehicles.html" class="text-xl/6 font-semibold text-gray-900">Véhicules</a>
-                <a href="../pages/parking-spots.html" class="text-xl/6 font-semibold text-gray-900">Places</a>
-                <a href="../pages/activity-log.html" class="text-xl/6 font-semibold text-gray-900">Journal</a>
-                <a href="../pages/dashboard.html" class="text-xl/6 font-semibold text-gray-900">Dashboard</a>
+                <a href="../index.html" class="text-sm/6 font-semibold text-gray-900">Acceuil</a>
+                <a href="../pages/vehicles.html" class="text-sm/6 font-semibold text-gray-900">Véhicules</a>
+                <a href="../pages/parking-spots.html" class="text-sm/6 font-semibold text-gray-900">Places</a>
+                <a href="../pages/activity-log.html" class="text-sm/6 font-semibold text-gray-900">Journal</a>
+                <a href="../pages/dashboard.html" class="text-sm/6 font-semibold text-gray-900">Dashboard</a>
 
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <a href="#" class="text-xl/6 font-semibold text-gray-900">Déconnexion <span
+                <a href="#" class="text-sm/6 font-semibold text-gray-900">Déconnexion <span
                         aria-hidden="true">&rarr;</span></a>
             </div>
         </nav>
@@ -116,40 +116,40 @@
             <h2 class="text-2xl font-bold mb-4">Ajouter un nouveau véhicule</h2>
             <form id="add-vehicle-form" class="bg-white shadow-md rounded-lg p-6">
                 <div class="mb-4">
-                    <label for="license-plate" class="block text-xl font-medium text-gray-700">Plaque
+                    <label for="license-plate" class="block text-sm font-medium text-gray-700">Plaque
                         d'immatriculation</label>
                     <input type="text" id="license-plate" name="license-plate"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         placeholder=" Entrer le numéro de Plaque d'immatriculation" required>
                 </div>
                 <div class="mb-4">
-                    <label for="owner" class="block text-xl font-medium text-gray-700">Nom du propriétaire</label>
+                    <label for="owner" class="block text-sm font-medium text-gray-700">Nom du propriétaire</label>
                     <input type="text" id="owner" name="owner"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         placeholder="Entrer le nom complet du propriétaire" required>
                 </div>
                 <div class="mb-4">
-                    <label for="contact" class="block text-xl font-medium text-gray-700">Numéro de contact</label>
+                    <label for="contact" class="block text-sm font-medium text-gray-700">Numéro de contact</label>
                     <input type="text" id="contact" name="contact"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         placeholder="Entrer un numéro de téléphone" required>
                 </div>
                 <div class="mb-4">
-                    <label for="model" class="block text-xl font-medium text-gray-700">Modèle du véhicule</label>
+                    <label for="model" class="block text-sm font-medium text-gray-700">Modèle du véhicule</label>
                     <input type="text" id="model" name="model"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         placeholder="Entrer le modèle du véhicule">
                 </div>
                 <div class="mb-4">
-                    <label for="color" class="block text-xl font-medium text-gray-700">Couleur</label>
+                    <label for="color" class="block text-sm font-medium text-gray-700">Couleur</label>
                     <input type="text" id="color" name="color"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         placeholder="Entrer la couleur">
                 </div>
                 <div class="mb-4">
-                    <label for="fuel-type" class="block text-xl font-medium text-gray-700">Type de carburant</label>
+                    <label for="fuel-type" class="block text-sm font-medium text-gray-700">Type de carburant</label>
                     <select id="fuel-type" name="fuel-type"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-xl"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         required>
                         <option value="Gasoline">Essence</option>
                         <option value="Diesel">Diesel</option>
@@ -158,22 +158,22 @@
                 </div>
 
                 <div class="mb-4">
-                    <span class="block text-xl font-medium text-gray-700">Statut</span>
+                    <span class="block text-sm font-medium text-gray-700">Statut</span>
                     <div class="flex items-center space-x-4 mt-2">
                         <label class="inline-flex items-center">
                             <input type="radio" id="status-parked" name="status" value="Garé"
                                 class="form-radio h-5 w-5 text-blue-600">
-                            <span class="ml-2 text-gray-700 text-xl">Garé</span>
+                            <span class="ml-2 text-gray-700 text-sm">Garé</span>
                         </label>
                         <label class="inline-flex items-center">
                             <input type="radio" id="status-exited" name="status" value="Sorti"
                                 class="form-radio h-5 w-5 text-blue-600">
-                            <span class="ml-2 text-gray-700 text-xl">Sorti</span>
+                            <span class="ml-2 text-gray-700 text-sm">Sorti</span>
                         </label>
                     </div>
                 </div>
 
-                <button type="submit" class=" bg-blue-900 text-white text-xl py-2 px-4 rounded-lg hover:bg-blue-800">
+                <button type="submit" class=" bg-blue-900 text-white text-sm py-2 px-4 rounded-lg hover:bg-blue-800">
                     Ajouter le véhicule
                 </button>
             </form>

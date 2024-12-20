@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Gestion de Parking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+        <div class="w-full max-w-md bg-white shadow-md rounded-lg p-8">
+            <h2 class="text-2xl font-bold text-center text-blue-900 mb-6">Inscription</h2>
+            <form id="register-form" class="register-form">
+                <div class="mb-4">
+                    <label for="fullname" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                    <input type="text" id="fullname" name="fullname"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-800 focus:border-blue-900 sm:text-sm">
+                    <p id="fullname-error" class="text-sm text-red-600 hidden">Le nom complet est requis.</p>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Adresse e-mail</label>
+                    <input type="email" id="email" name="email"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-800 focus:border-blue-900 sm:text-sm">
+                    <p id="email-error" class="text-sm text-red-600 hidden">Veuillez entrer une adresse e-mail valide.
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                    <input type="password" id="password" name="password"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-800 focus:border-blue-900 sm:text-sm">
+                    <p id="password-error" class="text-sm text-red-600 hidden">Le mot de passe est requis.</p>
+                </div>
+                <div class="mb-4">
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirmer le mot de
+                        passe</label>
+                    <input type="password" id="confirm-password" name="confirm-password"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-800 focus:border-blue-900 sm:text-sm">
+                    <p id="confirm-password-error" class="text-sm text-red-600 hidden">Les mots de passe ne
+                        correspondent pas.</p>
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <button type="submit"
+                        class="bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-blue-900">S'inscrire</button>
+                    <a href="./login.html" class="text-sm text-blue-800 hover:underline">Déjà inscrit ? Connexion</a>
+                </div>
+                <p id="register-success" class="text-sm text-green-600 hidden">Inscription réussie ! Redirection...</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/register.js"></script>
+</body>
+
+</html>

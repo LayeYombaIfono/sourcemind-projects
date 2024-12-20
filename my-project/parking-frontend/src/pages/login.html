@@ -1,54 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Gestion de Parking</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Login - Parking Management</title>
-    <link href="../styles/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/global.css">
 </head>
 
-<body class="bg-gray-100 flex justify-center items-center h-screen">
-
-    <main class="container mx-auto mt-8 h-lvh pt-7 ">
-        <div class="form mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6 shadow" action="#" method="POST" id="login">
-                <div>
-                    <label for="email" class="block text-xl/6 font-medium text-gray-900">Nom d'utilisateur</label>
-                    <div class="mt-2">
-                        <input type="email" name="email" id="email" autocomplete="email" required
-                            class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                    </div>
+<body class="bg-gray-100 text-gray-800">
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+        <div class="w-full max-w-md bg-white shadow-md rounded-lg p-8">
+            <h2 class="text-2xl font-bold text-center text-blue-900 mb-6">Connexion</h2>
+            <form id="login-form" class="login-form">
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Adresse e-mail</label>
+                    <input type="email" id="email" name="email"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-800 focus:border-blue-800 sm:text-sm">
+                    <p id="email-error" class="text-sm text-red-600 hidden">Veuillez entrer une adresse e-mail valide.
+                    </p>
                 </div>
-
-                <div>
-                    <div class="flex items-center justify-between">
-                        <label for="password" class="block text-sm/6 font-medium text-gray-900">Mot de passe</label>
-
-                    </div>
-                    <div class="mt-2">
-                        <input type="password" name="password" id="password" autocomplete="current-password" required
-                            class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                    </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                    <input type="password" id="password" name="password"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-800 focus:border-blue-800 sm:text-sm">
+                    <p id="password-error" class="text-sm text-red-600 hidden">Le mot de passe est requis.</p>
                 </div>
-
-                <div>
-                    <button type="submit"
-                        class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
-                        in</button>
+                <div class="flex items-center justify-between mb-4">
+                    <button type="submit" class="bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Se
+                        connecter</button>
+                    <a href="./register.html" class="text-xl text-blue-900 hover:underline">Créer un compte</a>
                 </div>
+                <p id="login-error" class="text-sm text-red-600 hidden">E-mail ou mot de passe incorrect.</p>
             </form>
-
-            <p class="mt-10 text-center text-sm/6 text-gray-500">
-                Not a member?
-                <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
-            </p>
         </div>
-    </main>
+    </div>
 
+    <script src="../js/login.js">
 
+    </script>
 </body>
 
 </html>

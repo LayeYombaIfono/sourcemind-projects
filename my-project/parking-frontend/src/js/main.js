@@ -95,39 +95,3 @@ document.getElementById("add-vehicle-form").addEventListener("submit", function 
         }
     });
 });
-
-
-// Exemple de rôle : "utilisateur", "manager", ou "admin"
-const role = "utilisateur"; // Remplacez par une logique dynamique (API, session, etc.)
-
-// Menus par rôle
-const menus = {
-    utilisateur: [
-        { text: "Accueil", link: "./index.html" },
-        { text: "Mon compte", link: "./account.html" },
-        { text: "Réservations", link: "./reservations.html" },
-        { text: "Déconnexion", link: "./logout.html" }
-    ],
-    manager: [
-        { text: "Accueil", link: "./index.html" },
-        { text: "Gestion des réservations", link: "./manage-reservations.html" },
-        { text: "Statistiques", link: "./stats.html" },
-        { text: "Déconnexion", link: "./logout.html" }
-    ],
-    admin: [
-        { text: "Accueil", link: "./index.html" },
-        { text: "Tableau de bord", link: "./dashboard.html" },
-        { text: "Gestion des utilisateurs", link: "./manage-users.html" },
-        { text: "Statistiques", link: "./stats.html" },
-        { text: "Déconnexion", link: "./logout.html" }
-    ]
-};
-
-// Remplir le menu en fonction du rôle
-const navMenu = document.getElementById("nav-menu");
-navMenu.innerHTML = ""; // Efface le menu par défaut
-menus[role].forEach(menu => {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="${menu.link}" class="hover:underline">${menu.text}</a>`;
-    navMenu.appendChild(li);
-});
